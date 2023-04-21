@@ -1,4 +1,4 @@
-```
+
 #include <stdio.h>
 #include <stdlib.h>		//exit 사용
 #include <string.h>		//strcmp 함수 사용
@@ -8,10 +8,10 @@
 
 typedef int Data;
 
-typedef struct {
+```typedef struct {
 	int top;
 	int stack[MAX_STACK];
-}Stack;
+}Stack;```
 
 void InitStack(Stack* pstack) {	//스택 초기화
 	pstack->top = -1;
@@ -78,7 +78,7 @@ int main() {
 		}
 	}
 }
-```
+
 문자열 비교 strcmp함수를 처음 사용했다.
 원랜 command == "push" 이렇게 비교 했었는데 오류가 나서 구글링 하던 도중 strcmp함수를 찾아냈다.
 헤더파일은 string.h
