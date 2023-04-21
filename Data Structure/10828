@@ -8,10 +8,10 @@
 
 typedef int Data;
 
-```typedef struct {
+typedef struct {
 	int top;
 	int stack[MAX_STACK];
-}Stack;```
+}Stack;
 
 void InitStack(Stack* pstack) {	//스택 초기화
 	pstack->top = -1;
