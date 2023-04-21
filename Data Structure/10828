@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>		//exit 사용
 #include <string.h>		//strcmp 함수 사용
