@@ -1,6 +1,4 @@
-```
-이진탐색 알고리즘
-```
+##이진탐색 알고리즘
 
 ```c
 #define _CRT_SECURE_NO_WARNINGS
