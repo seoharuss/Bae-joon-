@@ -1,6 +1,4 @@
-##이진탐색 알고리즘
-
-```c
+//이진탐색 알고리즘
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -53,4 +51,3 @@ int main() {
 	free(tree_list);
 	return 0;
 }
-```
