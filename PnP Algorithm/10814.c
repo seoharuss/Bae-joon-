@@ -17,7 +17,7 @@ int main() {
 		for (int i = 0; i < numberOfMember; i++) {
 			scanf("%d %s", &person[i].age, &person[i].name);
 		}
-		for (int i = 1; i < 201; i++) {
+		for (int k = 1; k < 201; i++) {
 			for (int j = 0; j < numberOfMember; j++) {
 				if (i == person[j].age) {
 					printf("%d %s\n", person[j].age, person[j].name);
@@ -27,4 +27,3 @@ int main() {
 	}
 	free(person);
 }
-
