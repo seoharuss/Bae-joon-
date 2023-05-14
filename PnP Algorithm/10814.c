@@ -10,7 +10,7 @@ typedef struct {
 int main() {
 	int numberOfMember;
 	scanf("%d", &numberOfMember);
-  //동적할당으로 원하는 수만큼만 할당
+  //동적할당으로 원하는 수만큼 할당
 	Person *person = (Person*)malloc(sizeof(Person) * numberOfMember);
   //포인터 변수가 NULL을 가리키는 오류가 발생할 수 있으므로 NULL을 가리키는지 먼저 확인해야함.
 	if (person != NULL) {
