@@ -1,13 +1,17 @@
 def bfs(maze):
+  # 경로 개수를 세는 변수 
   count = 1
   visited = [[0]*M for _ in range(N)]
   visited[0][0] = 1
   queue = [(0, 0)]
+  # 미로 탐색 가능 방향
   dx = [0, 0, -1, 1]
   dy = [-1, 1, 0, 0]
   while queue:
       count += 1
+      # enqueue된 개수만큼 반복
       for _ in range(len(queue)):
+          # 자료구조 queue이므로 선입 선출 방식으로 탐색
           x, y = queue.pop(0)
           for i in range(4):
               nx = x + dx[i]
