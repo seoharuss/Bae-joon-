@@ -1,23 +1,23 @@
 def bfs(maze):
-    count = 1
-    visited = [[0]*M for _ in range(N)]
-    visited[0][0] = 1
-    queue = [(0, 0)]
-    dx = [0, 0, -1, 1]
-    dy = [-1, 1, 0, 0]
-    while queue:
-        count += 1
-        for _ in range(len(queue)):
-            x, y = queue.pop(0)
-            for i in range(4):
-                nx = x + dx[i]
-                ny = y + dy[i]
-                if nx == N-1 and ny == M-1:
-                    return count
-                if 0 <= nx < N and 0 <= ny < M and maze[nx][ny] == 1 and visited[nx][ny] == 0:
-                    queue.append((nx, ny))
-                    visited[nx][ny] = 1
-    return count
+  count = 1
+  visited = [[0]*M for _ in range(N)]
+  visited[0][0] = 1
+  queue = [(0, 0)]
+  dx = [0, 0, -1, 1]
+  dy = [-1, 1, 0, 0]
+  while queue:
+      count += 1
+      for _ in range(len(queue)):
+          x, y = queue.pop(0)
+          for i in range(4):
+              nx = x + dx[i]
+              ny = y + dy[i]
+              if nx == N-1 and ny == M-1:
+                  return count
+              if 0 <= nx < N and 0 <= ny < M and maze[nx][ny] == 1 and visited[nx][ny] == 0:
+                  queue.append((nx, ny))
+                  visited[nx][ny] = 1
+  return count
     
       
 N, M = map(int, input().split())
