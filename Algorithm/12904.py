@@ -22,3 +22,5 @@ for i in queue:
   if T == i:
     result = 1
 print(result)
+
+# 1차 제출 : 메모리 초과
