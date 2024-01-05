@@ -18,10 +18,9 @@ for i in range(N):
 negative.sort()
 positive.sort(reverse=True)
 
-
 result = 0
 for i in range(0, len(negative), M):
-  if negative[i] != temp:
+  if -negative[i] != temp:
     result += (-negative[i])*2
 for k in range(0, len(positive), M):
   if positive[k] != temp:
