@@ -6,20 +6,18 @@ location = list(map(int, input().split()))
 
 positive = []
 negative = []
-
+temp = 0
 for i in range(N):
   if location[i] < 0:
     negative.append(location[i])
   else:
     positive.append(location[i])
+  if abs(location[i]) > temp:
+    temp = abs(location[i])
     
 negative.sort()
 positive.sort(reverse=True)
-temp = 0
-if -negative[0] < positive[-1]:
-  temp = positive[-1]
-else:
-  temp = negative[0]
+
 
 result = 0
 for i in range(0, len(negative), M):
