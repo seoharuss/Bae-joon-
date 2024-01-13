@@ -1,12 +1,14 @@
 N, K = map(int, input().split())
-size = [0 for _ in range(N)]
-value = [0 for _ in range(N)]
+items = []
 
 
 for i in range(N):
-  size[i], value[i] = map(int, input().split())
+  w, v = map(int, input().split())
+  items.append((w, v))
 
-dp = [[0 for _ in range(N+1)] for _ in range(N+1)]
+dp = [0 for _ in range(K+1)]
+
+
 
 
 #################################################
