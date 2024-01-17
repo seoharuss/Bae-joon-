@@ -1,31 +1,30 @@
-# 링크드리스트 구현
-class Node:
-  def __init__(self, data, next=None):
-    self.data = data
-    self.next = next
-    
-def add(data):
-  node = head
-  while node.next:
-    if node.next.data < data:
-      node = node.next
-    else: break
-  newNode = Node(data)
-  newNode.next = node.next
-  node.next = newNode
+import sys
+import heapq
+N = int(sys.stdin.readline())
 
+minHeap = []
+maxHeap = []
+answer = []
+
+for i in range(N):
+  temp = int(sys.stdin.readline())
+  if len(minHeap) == len(maxHeap):
+    heapq.heappush(minHeap, (-temp, temp))
+  else:
+    heapq.heappush(maxHeap, (temp, temp))
   
+  if maxHeap and minHeap[0][1] > maxHeap[0][0]:
+    temp1 = heapq.heappop(maxHeap[0])
+    temp2 = heapq.heappop(minHeap[1])
+    heapq.heappush(minHeap, (-temp1, temp1))
+    heapq.heappush(maxHeap, (temp2, temp2))
+  answer.append(minHeap[0][1])
 
-N = int(input())
-first = int(input())
-head = Node(first)
-print(head.data)
-for i in range(1, N):
-  temp = int(input())
-  add(temp)
-  mid_index = i // 2
-  node = head
-  for _ in range(mid_index):
-    node = node.next
-  print(node.data)
-   
+for j in answer:
+  print(j)
+  
+#######################################
+# 1. 링크드리스트 만들기 
+# 링크드리스트로 값을 하나하나 집어넣고 출력한다.
+
+# 2. 힙을 2개를 사용하여 구현하기
