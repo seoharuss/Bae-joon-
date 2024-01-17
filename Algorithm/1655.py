@@ -1,27 +1,26 @@
-import sys
 import heapq
-N = int(sys.stdin.readline())
+import sys
 
-minHeap = []
-maxHeap = []
-answer = []
+n = int(sys.stdin.readline())
 
-for i in range(N):
-  temp = int(sys.stdin.readline())
-  if len(minHeap) == len(maxHeap):
-    heapq.heappush(minHeap, (-temp, temp))
+leftHeap = []
+rightHeap = []
+for i in range(n):
+  num = int(sys.stdin.readline())
+
+  if len(leftHeap) == len(rightHeap):
+    heapq.heappush(leftHeap, -num)
   else:
-    heapq.heappush(maxHeap, (temp, temp))
-  
-  if maxHeap and minHeap[0][1] > maxHeap[0][0]:
-    temp1 = heapq.heappop(maxHeap[0])
-    temp2 = heapq.heappop(minHeap[1])
-    heapq.heappush(minHeap, (-temp1, temp1))
-    heapq.heappush(maxHeap, (temp2, temp2))
-  answer.append(minHeap[0][1])
+    heapq.heappush(rightHeap, num)
 
-for j in answer:
-  print(j)
+  if rightHeap and rightHeap[0] < -leftHeap[0]:
+    leftValue = heapq.heappop(leftHeap)
+    rightValue = heapq.heappop(rightHeap)
+
+    heapq.heappush(leftHeap, -rightValue)
+    heapq.heappush(rightHeap, -leftValue)
+
+  print(-leftHeap[0])
   
 #######################################
 # 1. 링크드리스트 만들기 
